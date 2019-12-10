@@ -8,11 +8,11 @@ Tạo một website django trong 5 phút hỗ trợ Window, Linux, MacOs.<br>
 <br>
 <h1>Window</h1>
 <h2>Cài đặt:</h2>
-<h3>Bước 1: Đến tư mục cần lưu Project</h3>
+<h3>Bước 1:  Mở Command Prompt và đến tư mục cần lưu Project</h3>
 <pre>
 cd parentProjectDir\projectDir
 </pre>
-<h3>Bước 2: Mở Command Prompt và dán vào đoạn mã bên dưới</h3>
+<h3>Bước 2: Dán vào đoạn mã bên dưới</h3>
 <pre>
 git clone https://github.com/quangkhoi1228/web_django_in_5_minutes.git
 cd web_django_in_5_minutes
@@ -27,11 +27,11 @@ echo done
 </pre>
 <h1>MacOs</h1>
 <h2>Cài đặt:</h2>
-<h3>Bước 1: Đến tư mục cần lưu Project</h3>
+<h3>Bước 1: Mở Teminal và đến tư mục cần lưu Project</h3>
 <pre>
-cd parentProjectDir\projectDir
+cd parentProjectDir/projectDir
 </pre>
-<h3>Bước 2: Mở Teminal và dán vào đoạn mã bên dưới</h3>
+<h3>Bước 2: Dán vào đoạn mã bên dưới</h3>
 <pre>
 git clone https://github.com/quangkhoi1228/web_django_in_5_minutes.git
 cd web_django_in_5_minutes

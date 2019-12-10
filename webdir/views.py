@@ -4,15 +4,11 @@ from django.http import JsonResponse
 from django.views.generic import TemplateView
 from django.core.files.storage import FileSystemStorage
 
-from . import util
-
-
-# Create your views here.
-
-
+from django.http import HttpResponse
+ 
 def index(request):
-    context = {}
-    if request.method == 'POST':
-        context = util.detectTrafficSign(request)
-    context['title'] = 'Trang chủ'
-    return render(request, 'index.html', context=context)
+    response = HttpResponse()
+    response.write("<h1>Welcome</h1>")
+    response.write("This is the polls app")
+    return response
+
