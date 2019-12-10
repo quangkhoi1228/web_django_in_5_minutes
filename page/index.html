@@ -1,0 +1,139 @@
+{% extends "template/roottemplate.html" %}
+
+{% block content %}
+<div class="columns">
+	<div class="column is-4 ">
+		<form id="formInput" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="field">
+				<label class="label"><span class="title">Chọn ảnh</span></label>
+				<div class="file is-info has-name">
+					<label class="file-label">
+						<input class="file-input" type="file" name="image">
+						<button class="is-hidden" type="submit">Upload file</button>
+						<span class="file-cta">
+							<span class="file-icon">
+								<i class="fas fa-upload"></i>
+							</span>
+							<span class="file-label">
+								Chọn ảnh
+							</span>
+						</span>
+
+						<span class="file-name">
+							<span class="">{{ url }}</span>
+						</span>
+
+					</label>
+				</div>
+			</div>
+			{% if url %}
+			<div class="field has-text-centered">
+				<img id="fileChoosePreview" src="{{ url }}">
+			</div>
+			{% endif %}
+		</form>
+	</div>
+	{% if traffictrainid %}
+	<div class="is-divider-vertical "></div>
+	<div id="resultColumn" class="column has-result">
+		<p id="traffictrainidContainer" class="is-hidden">{{ traffictrainid }}</p>
+		<div class="field">
+			<label class="label"><span class="title">Kết quả</span></label>
+		</div>
+		<div class="show-when-has-result">
+			<div class=" notification box is-dark">
+				<article id="trafficResultContainer" class="media">
+					<figure class="media-left">
+						<p class="image is-64x64 ">
+							<img class="is-rounded" snb-key="image" snb-key-src="image">
+						</p>
+					</figure>
+					<div class="media-content">
+						<div class="content">
+							<p>
+								<strong snb-key="name"></strong>
+								<span snb-key="description"></span>
+							</p>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="field">
+				<label class="label"><span class="subtitle">Góp ý cho ứng dụng</span></label>
+			</div>
+			<div class="buttons">
+				<button onclick="indexrender.thankReport()" class="button is-success"><span class="icon"><i
+							class="fa fa-check"></i></span><span>Kết quả
+						đúng</span></button>
+				<button onclick="indexrender.thankReport()" class="button is-danger"><span class="icon"><i
+							class="fa fa-times"></i></span><span>Kết quả
+						chưa đúng</span></button>
+				<button onclick="indexrender.showDetail()" class="button is-info"><span class="icon"><i
+							class="fa fa-search"></i></span><span>Xem chi tiết </span></button><a
+					class="button is-light is-dark" href="https://github.com/quangkhoiuit98/trafficsignrecognize"
+					target="_blank"><span class="icon"><i class="fab fa-github"></i></span><span>Star Github</span></a>
+
+			</div>
+		</div>
+		<div class="hidden-when-has-result notification">Biển báo chưa hỗ trợ hoặc không tìm thấy biển báo trong hình.
+			Xem thêm thông tin biển báo <a class="has-text-link" href="/trafficinfomation" target="_blank">tại đây</a>
+		</div>
+	</div>
+	{% endif%}
+</div>
+<div id="detailSection" class="columns is-multiline is-hidden">
+	<div class="column is-12">
+		<div class="is-divider"></div>
+		<p class="title">Chi tiết xử lý</p>
+	</div>
+	<div class="column is-4">
+		<div class="field">
+			<label class="label"><span>original</span></label>
+			<img src="/static/image/original.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Mask Range 1</span></label>
+			<img src="/static/image/markrange1.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Mask Range 2</span></label>
+			<img src="/static/image/markrange2.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Mask for Red Region</span></label>
+			<img src="/static/image/maskforredregion.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Mask for Red Rigon</span></label>
+			<img src="/static/image/maskforredrigon.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Edge map</span></label>
+			<img src="/static/image/edgemap.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Contour - No Restriction</span></label>
+			<img src="/static/image/contournorestriction.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Contours - Restricted for Large Region</span></label>
+			<img src="/static/image/contourrestrictedforlargeregion.jpg">
+		</div>
+		<div class="field">
+			<label class="label"><span>Crop</span></label>
+			<img src="/static/image/cropimage.jpg">
+		</div>
+
+	</div>
+	<div id="utilCode" class="column is-8">
+	</div>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+
+		indexrender.build();
+	});
+</script>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        {{ title }}
+        {% endblock %}
+    </title>
+
+    <link rel="icon" type="image/png" href="/static/image/favicon.png">
+    <link rel="stylesheet" href="/static/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bulma-extensions.min.css">
+    <link rel="stylesheet" href="/static/css/bulma-badge.min.css">
+    <link rel="stylesheet" href="/static/css/shinobicomponent.css">
+    <script>
+        var shinobi = {};
+    </script>
+    <script defer src="/static/js/jquery.min.js"></script>
+    <script defer src="/static/js/jPages.js"></script>
+    <script defer src="/static/js/simplescrollup.js"></script>
+    <script defer src="/static/js/bulma-extensions.min.js"></script>
+    <script defer src="/static/js/all.js"></script>
+    <script defer src="/static/js/notification.js"></script>
+    <script defer src="/static/js/mapping.js"></script>
+    <script defer src="/static/js/util.js"></script>
+    <script defer src="/static/js/indexrender.js"></script>
+    <script defer src="/static/js/trafficinfomationrender.js"></script>
+    <script defer src="/static/js/contactrender.js"></script>
+    <script defer src="/static/js/guiderender.js"></script>
+
+
+</head>
+
+<body class="has-background-light">
+    <nav class="navbar has-shadow is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item has-badge-inline" href="/" data-badge="Beta">
+                <img class="object-fit-cover" src="/static/image/icon.png">
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item " href="/index">
+                    <span>Trang chủ</span>
+                </a>
+                <a class="navbar-item " href="/trafficinfomation" target="_blank">
+                    <span>Tra cứu biển báo</span>
+                </a>
+                <a class="navbar-item " href="/guide" target="_blank">
+                    <span>Hướng dẫn</span>
+                </a>
+                <a class="navbar-item " href="/contact" target="_blank">
+                    <span>Liên hệ</span>
+                </a>
+                <a class="navbar-item " href="https://github.com/quangkhoiuit98/trafficsignrecognize" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>View on Github</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="hero ">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-10 is-offset-1 has-background-white box">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="top" href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad"
+        class="button is-dark simplescrollup__button simplescrollup__button--hide" style="display: none;"><span
+            class="icon"><i class="fa fa-chevron-up"></i></span></a>
+    <div id="confirmPanel" class="modal is-small">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Cảnh báo</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">Bạn chắc chắn?</section>
+            <footer class="modal-card-foot">
+                <button class="button is-success yes">Xác nhận</button>
+                <button class="button cancel">Hủy</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="shinobinotification" class="notification  shinobinotification">
+        <button class="delete"></button>
+        <div class="notificationcontent">Update success</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            $(".navbar-burger").click(function () {
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+            });
+
+
+            function display() {
+                if ($(document).scrollTop() > 300) {
+                    //$("#top").show();
+                    $("#top").fadeIn(300);
+                } else {
+                    //$("#top").hide();
+                    $("#top").fadeOut(300);
+                }
+            }
+
+            $(window).bind("scroll", display);
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

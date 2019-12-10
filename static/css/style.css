@@ -1,0 +1,97 @@
+body{
+    min-height: 100vh;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+}
+
+[data-badge].has-badge-inline::after {
+    top: 1rem !important;
+    right: -1.25rem !important;
+    background: transparent;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+.navbar-item img {
+    max-height: 2.5rem;
+}
+
+.navbar-brand .navbar-item{
+
+    padding: 0 0 0 0.75rem;
+}
+
+.navbar-brand .navbar-item:hover {
+    background: transparent !important;
+}
+
+.logo {
+    padding: 0 0 0 1rem;
+}
+.is-divider-vertical{
+    padding: 0.75rem !important;
+}
+.is-divider-vertical::before{
+    border-left: 1px dashed black !important;
+}
+.show-when-has-result{
+
+    display: none
+}
+.hidden-when-has-result{
+
+    display: block;
+}
+
+.has-result .hidden-when-has-result{
+    display: none;
+}
+
+.has-result .show-when-has-result{
+    display: block;
+}
+
+.column{
+    padding: 1.5rem;
+}
+
+.fa-facebook{
+    color: #4267b2;
+}
+
+.fa-skype{
+    color: #00aff0;
+}
+
+.fa-google{
+    color: #ea4335;
+}
+
+.contact-content  a{
+    position: relative;
+    top: -0.65rem;
+}
+
+.object-fit-cover{
+    object-fit: cover;
+}
+
+.hero .tabs ul{
+    border-bottom-color: #dbdbdb;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+
+.simplescrollup__button {
+	position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: 50%;
+	transition: 1s all;
+	z-index: 10000;
+}
