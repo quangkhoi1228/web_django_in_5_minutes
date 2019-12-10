@@ -25,7 +25,7 @@ start cmd.exe /c python manage.py runserver
 explorer "http://localhost:8000/"
 echo done
 </pre>
-<h1>Linux, MacOs</h1>
+<h1>MacOs</h1>
 <h2>Cài đặt:</h2>
 <h3>Bước 1: Đến tư mục cần lưu Project</h3>
 <pre>
@@ -41,7 +41,8 @@ virtualenv projectenv
 source projectenv/bin/activate
 pip install Django
 osascript -e 'tell app "Terminal"
-    do script "open http://localhost:8000/"           
+    do script "open http://localhost:8000/"    
+    do script "exit"       
 end tell'
 python manage.py runserver
 echo done
