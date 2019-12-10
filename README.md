@@ -4,6 +4,7 @@ Tạo một website django trong 5 phút hỗ trợ Window, Linux, MacOs.<br>
 <h1>Yêu cầu:</h1>
 <ul>
      <li>python 3.6.9</li>
+     <li>git</li>
 </ul>
 <br>
 <h1>Window</h1>
