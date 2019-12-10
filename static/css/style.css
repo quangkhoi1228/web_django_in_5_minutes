@@ -29,6 +29,10 @@ body{
     background: transparent !important;
 }
 
+.navbar-brand{
+    font-size: 2rem;
+}
+
 .logo {
     padding: 0 0 0 1rem;
 }
