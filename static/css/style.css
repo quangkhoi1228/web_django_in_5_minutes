@@ -2,6 +2,14 @@ body{
     min-height: 100vh;
 }
 
+.has-background-transparent{
+    background: transparent;
+}
+
+.has-background-none {
+    background: none !important;
+}
+
 .navbar{
     position: sticky;
     top: 0;
@@ -41,6 +49,20 @@ body{
 }
 .is-divider-vertical::before{
     border-left: 1px dashed black !important;
+}
+
+.index-background-image{
+    width: 100vw;
+    object-fit: cover;
+    max-height: 100vh;
+}
+
+.index-background-section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
 }
 .show-when-has-result{
 
