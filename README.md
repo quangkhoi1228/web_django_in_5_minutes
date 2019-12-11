@@ -26,6 +26,7 @@ start cmd.exe /c python manage.py runserver
 explorer "http://localhost:8000/"
 echo done
 </pre>
+<i><b>Lưu ý: Nếu muốn chạy website sau khi cài đặt lần đầu, chỉ cần thực hiện theo hướng dẫn "Chạy website" bên dưới.</b></i>
 <h2>Chạy website:</h2>
 <h3>Bước 1:  Mở Command Prompt và đến tư mục cần lưu Project</h3>
 <pre>
@@ -61,6 +62,7 @@ end tell'
 python manage.py runserver
 echo done
 </pre>
+<i><b>Lưu ý: Nếu muốn chạy website sau khi cài đặt lần đầu, chỉ cần thực hiện theo hướng dẫn "Chạy website" bên dưới.</b></i>
 <h2>Chạy website:</h2>
 <h3>Bước 1: Mở Teminal và đến tư mục cần lưu Project</h3>
 <pre>
@@ -100,6 +102,7 @@ python manage.py migrate
 python manage.py runserver
 echo done
 </pre>
+<i><b>Lưu ý: Nếu muốn chạy website sau khi cài đặt lần đầu, chỉ cần thực hiện theo hướng dẫn "Chạy website" bên dưới.</b></i>
 <h2>Chạy website:</h2>
 <h3>Bước 1: Mở Teminal và đến tư mục cần lưu Project</h3>
 <pre>
